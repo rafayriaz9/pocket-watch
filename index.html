@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>pocket.watch - Bringing Kids More of What They Love</title>
+      <meta name="description" content="" />
+      <!--  FavIcon  -->
+      <link rel="shortcut icon" href="assets/img/favicon.png">
+      <!-- Google Fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,600&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap" rel="stylesheet">
+      <!-- Font Awesome -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <!--  plugins Css  -->
+      <link rel="stylesheet" type="text/css" href="assets/css/plugins.css">
+      <!--  Custom Style CSS  -->
+      <link rel="stylesheet" href="assets/css/style.css">
+      <!-- Animation CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+   </head>
+   <body class="pilling-page mono intro"  data-spy="scroll" data-target="#scrollspy" data-offset="1">
+      <!--  Pre Loader  -->
+      <div id="overlayer">
+         <img src="assets/img/box.png" alt="box">
+      </div>
+      <section id="start" style="background-image: url(assets/img/planet.png); background-position: center;">
+         <div class="container">
+            <div class="row">
+               <div class="col-12">
+                  <div class="text-center pt-5">
+                     <img src="assets/img/logo.png" alt="">
+                     <h1 class="mt-5 wow fadeInUp mt-3" data-wow-delay="0.4s">Bringing kids more<br> of what they love.</h1>
+                  </div>
+                  <div id="anim_box"><img src="assets/img/box_anim.png" alt=""/></div>
+                  <div id="box">
+                     <div class="vibro"><img src="assets/img/box.png" class="box" alt=""></div>
+                     <div class="click">Click to Open</div>
+                  </div>
+                  <div class="scroll" align="center">
+                     <div class="scroll_txt"><a href="home.html"><span class="icon-angle-down"></span></a></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!--  Page Pilling  End -->
+      <!--  JavaScripts  -->
+      <script src="assets/js/jquery-3.4.1.min.js"></script>
+      <!--  Plugins JS  -->
+      <script src="assets/js/plugins.js"></script>
+      <!--  Custom JS  -->
+      <script src="assets/js/nill.js"></script>
+      <script src="assets/js/custom.js"></script>
+      <script>
+         $(document).ready(function () {
+          $('#box').bind('click mousedown', function () {
+            $('.box').css("opacity","0")
+            srcToGif2 = "img/box_anim.png";
+            $('.click').fadeOut('slow');
+            $("#anim_box").attr('src', srcToGif2).css("opacity","1");
+            setTimeout(function () {
+              $('.scroll').fadeIn(1500);   
+            },3000); 
+          });
+         });
+         
+         
+         setTimeout(function () {
+           setInterval(function () {
+             $(".vibro").css("animation", "0.1s tremor ease-out infinite").css("-webkit-animation", "0.1s tremor ease-out infinite");
+             setTimeout(function () {
+               $(".vibro").css("animation", "0").css("-webkit-animation", "0");
+             },1000);
+           },2000);
+         },300);
+         
+         function randomInteger (min, max){
+          var rand = min - 0.5 + Math.random() * (max - min +1)
+          rand = Math.round(rand);
+          return rand;
+         }
+         var randomPerson = randomInteger(1,6);
+         $(function(){
+         $('#person').addClass("person-" + randomPerson);
+         });
+         
+      </script>  
+   </body>
+</html>
